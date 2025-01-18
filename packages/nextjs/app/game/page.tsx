@@ -1,3 +1,4 @@
+"use client";
 import { Card, Avatar, Button } from "@radix-ui/themes";
 import React from "react";
 import { useUnityContext, Unity } from "react-unity-webgl";
