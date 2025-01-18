@@ -8765,6 +8765,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-unity-webgl@npm:^9.7.0":
+  version: 9.7.0
+  resolution: "react-unity-webgl@npm:9.7.0"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 95085faf1885051ac20a94e9fdf87743d1401e26bbfd76e89fb901ef0d6ff9da2fd2d2e88ab96a21d98ac95b705a92a0a428baaaa6256c4e207f19175348b043
+  languageName: node
+  linkType: hard
+
 "react@npm:^18":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
@@ -9491,6 +9500,7 @@ __metadata:
     pinst: ^3.0.0
     postcss: ^8.4.38
     prettier: ^3.2.5
+    react-unity-webgl: ^9.7.0
     tailwind-merge: ^2.6.0
   languageName: unknown
   linkType: soft
