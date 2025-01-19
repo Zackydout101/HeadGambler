@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "~~/components/ui/avatar";
 import { Wallet, Coins, Play, TrendingUp, TrendingDown } from "lucide-react";
 import WinLossGraph from "~~/components/win-loss-graph";
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { CustomConnectPlayButton } from "~~/components/scaffold-stark/CustomConnectPlayButton";
 
 const Home = () => {
     return (
@@ -23,7 +24,7 @@ const Home = () => {
                 <h1>
                     <span className="block text-4xl md:text-6xl mb-4">Welcome to</span>
                     <span className="block text-6xl md:text-8xl font-bold">
-                        Block Ballerz
+                        Blockchain Ballerz
                     </span>
                 </h1>
                 <ConnectedAddress />
@@ -34,17 +35,11 @@ const Home = () => {
                 <Button 
                     as={Link} 
                     href="/info" 
-                    className="px-12 py-6 text-2xl md:text-3xl font-semibold rounded-xl bg-gray-700 hover:bg-gray-600 text-white"
+                    className="rounded-[18px]  btn-sm font-bold px-8 bg-btn-wallet py-3 cursor-pointer mt-[-7px]"
                 >
                     More Info
                 </Button>
-                <Button 
-                    as={Link} 
-                    href="/play" 
-                    className="px-12 py-6 text-2xl md:text-3xl font-semibold rounded-xl bg-blue-600 hover:bg-blue-500 text-white"
-                >
-                    Play
-                </Button>
+                <CustomConnectPlayButton/>
             </div>
         </div>
     );
