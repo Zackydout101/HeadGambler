@@ -11,6 +11,7 @@ import { getBlockExplorerAddressLink } from "~~/utils/scaffold-stark";
 import { useAccount, useNetwork } from "@starknet-react/core";
 import { Address } from "@starknet-react/chains";
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation"; // Import the useRouter hook
 import ConnectModal from "./ConnectModal";
 import scaffoldConfig from "~~/scaffold.config";
 
@@ -24,6 +25,7 @@ export const CustomConnectPlayButton = () => {
   const { account, status, address: accountAddress } = useAccount();
   const [accountChainId, setAccountChainId] = useState<bigint>(0n);
   const { chain } = useNetwork();
+  const router = useRouter(); // Initialize the router
 
   const blockExplorerAddressLink = useMemo(() => {
     return (
@@ -32,7 +34,14 @@ export const CustomConnectPlayButton = () => {
     );
   }, [accountAddress, targetNetwork]);
 
-  // effect to get chain id and address from account
+  // Redirect to /game after wallet is connected
+  useEffect(() => {
+    if (status === "connected") {
+      router.push("/game");
+    }
+  }, [status, router]);
+
+  // Effect to get chain id and address from account
   useEffect(() => {
     if (account) {
       const getChainId = async () => {
@@ -49,28 +58,4 @@ export const CustomConnectPlayButton = () => {
   if (accountChainId !== targetNetwork.id) {
     return <WrongNetworkDropdown />;
   }
-
-  return (
-    <>
-      <div className="flex flex-col items-center max-sm:mt-2">
-        <Balance
-          address={accountAddress as Address}
-          className="min-h-0 h-auto"
-        />
-        <span className="text-xs ml-1" style={{ color: networkColor }}>
-          {chain.name}
-        </span>
-      </div>
-      <AddressInfoDropdown
-        address={accountAddress as Address}
-        displayName={""}
-        ensAvatar={""}
-        blockExplorerAddressLink={blockExplorerAddressLink}
-      />
-      <AddressQRCodeModal
-        address={accountAddress as Address}
-        modalId="qrcode-modal"
-      />
-    </>
-  );
 };
