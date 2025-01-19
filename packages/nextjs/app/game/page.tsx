@@ -27,7 +27,7 @@ export default function page() {
                 <Card className="w-full max-w-md bg-gray-800/80 backdrop-blur-sm border-2 border-purple-500 shadow-lg shadow-purple-500/20 relative z-10">
                     <CardHeader className="border-b border-gray-700">
                         <CardTitle className="text-2xl font-bold text-center text-purple-400">
-                            Crypto Gamer Dashboard
+                            Dashboard
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="mt-6 space-y-6">
