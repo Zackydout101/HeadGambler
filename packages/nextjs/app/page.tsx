@@ -32,13 +32,12 @@ const Home = () => {
 
             {/* Buttons */}
             <div className="flex space-x-8">
-                <Button 
-                    as={Link} 
-                    href="/info" 
-                    className="rounded-[18px]  btn-sm font-bold px-8 bg-btn-wallet py-3 cursor-pointer mt-[-7px]"
-                >
-                    More Info
-                </Button>
+                <button
+                > 
+                    <Link href="/info" className="rounded-[18px] btn-sm font-bold px-8 bg-btn-wallet py-3 cursor-pointer mt-[-7px]">
+                        More Info
+                    </Link>
+                </button>
                 <CustomConnectPlayButton/>
             </div>
         </div>
